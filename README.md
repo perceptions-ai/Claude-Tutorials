@@ -19,9 +19,9 @@
 └── README.md               # 本说明文件
 ```
 
-## 🛠 如何运行
+## 🛠 本地开发与预览
 
-要在本地预览此网站，您需要安装 Python 环境。
+如果您需要修改内容并查看效果，可以在本地运行预览服务器。
 
 ### 1. 安装依赖
 
@@ -32,48 +32,47 @@
 python3 -m venv .venv
 source .venv/bin/activate  # Windows 用户使用: .venv\Scripts\activate
 
-# 安装 MkDocs 和 Material 主题
-pip install mkdocs-material
+# 安装依赖
+pip install -r requirements.txt
 ```
 
-### 2. 启动本地服务器
+### 2. 启动预览
 
 ```bash
 mkdocs serve
 ```
 
-运行后，在浏览器访问 http://127.0.0.1:8000 即可预览网站。
+运行后，在浏览器访问 http://127.0.0.1:8000 即可实时预览修改效果。
 
-### 3. 构建静态文件
+## 🚀 部署到 Netlify
 
-如果您需要部署到服务器（如 GitHub Pages 或 Nginx）：
+本项目已配置 `netlify.toml`，支持一键部署到 Netlify。
+
+### 1. 推送到 GitHub
+
+首先，将代码推送到您的 GitHub 仓库：
 
 ```bash
-mkdocs build
+# 如果是新仓库
+git remote add origin https://github.com/<your-username>/<repo-name>.git
+git branch -M main
+git push -u origin main
 ```
 
-构建生成的 HTML 文件将位于 `site/` 目录下。
+### 2. 在 Netlify 上创建站点
 
-## 🚀 部署到 GitHub Pages
+1.  登录 [Netlify](https://www.netlify.com/)。
+2.  点击 **"Add new site"** -> **"Import from an existing project"**。
+3.  选择 **GitHub** 并授权。
+4.  选择您的仓库（例如 `claude-code-tutorials`）。
 
-1.  在 GitHub 上创建一个新仓库（例如 `claude-code-tutorials`）。
-2.  将本地内容推送到仓库：
+### 3. 自动配置与部署
 
-    ```bash
-    git init
-    git add .
-    git commit -m "Initial commit"
-    git branch -M main
-    git remote add origin https://github.com/<your-username>/<repo-name>.git
-    git push -u origin main
-    ```
+由于项目中已包含 `netlify.toml`，Netlify 会自动识别构建设置：
+*   **Build command**: `pip install -r requirements.txt && mkdocs build`
+*   **Publish directory**: `site`
 
-3.  启用 GitHub Actions 自动部署：
-    *   在仓库中创建 `.github/workflows/ci.yml` (参考 MkDocs 官方文档)
-    *   或者直接使用 `gh-deploy` 命令（需在本地配置好权限）：
-        ```bash
-        mkdocs gh-deploy
-        ```
+直接点击 **"Deploy site"** 即可。以后每次推送到 GitHub，Netlify 都会自动重新构建并更新网站。
 
 ## 📝 贡献
 
