@@ -44,35 +44,41 @@ mkdocs serve
 
 运行后，在浏览器访问 http://127.0.0.1:8000 即可实时预览修改效果。
 
-## 🚀 部署到 Netlify
+## 🚀 部署到 Cloudflare Pages (推荐)
 
-本项目已配置 `netlify.toml`，支持一键部署到 Netlify。
+由于网络原因，推荐部署到 Cloudflare Pages。
 
-### 1. 推送到 GitHub
+### 1. 准备工作
 
-首先，将代码推送到您的 GitHub 仓库：
+确保仓库中包含 `requirements.txt`。
 
-```bash
-# 如果是新仓库
-git remote add origin https://github.com/<your-username>/<repo-name>.git
-git branch -M main
-git push -u origin main
-```
+### 2. 在 Cloudflare 上创建项目
 
-### 2. 在 Netlify 上创建站点
+1.  登录 [Cloudflare Dashboard](https://dash.cloudflare.com/)。
+2.  进入 **Compute (Workers & Pages)** -> **Overview**。
+3.  点击 **Create Application** -> **Pages** -> **Connect to Git**。
+4.  选择您的仓库 (`claude-code-tutorials`)。
 
-1.  登录 [Netlify](https://www.netlify.com/)。
-2.  点击 **"Add new site"** -> **"Import from an existing project"**。
-3.  选择 **GitHub** 并授权。
-4.  选择您的仓库（例如 `claude-code-tutorials`）。
+### 3. 构建配置 (关键！)
 
-### 3. 自动配置与部署
+在配置页面填写以下信息：
 
-由于项目中已包含 `netlify.toml`，Netlify 会自动识别构建设置：
+*   **Framework preset**: 选 `None` 或 `MkDocs` (如果有)
 *   **Build command**: `pip install -r requirements.txt && mkdocs build`
-*   **Publish directory**: `site`
+*   **Build output directory**: `site`
 
-直接点击 **"Deploy site"** 即可。以后每次推送到 GitHub，Netlify 都会自动重新构建并更新网站。
+**⚠️ 重要步骤：设置 Python 版本**
+
+Cloudflare 默认 Python 版本较旧，会导致构建失败。请务必在 **Environment variables** 部分添加：
+
+*   **Variable name**: `PYTHON_VERSION`
+*   **Value**: `3.8` (或更高，如 3.11)
+
+### 4. 部署与完成
+
+点击 **Save and Deploy**。构建完成后，您将获得一个 `*.pages.dev` 的域名。
+
+> **提示**: 部署成功后，请记得修改 `mkdocs.yml` 中的 `site_url` 为您的 Cloudflare 域名，以确保搜索和站点地图功能正常。
 
 ## 📝 贡献
 
