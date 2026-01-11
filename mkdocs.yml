@@ -8,7 +8,7 @@ repo_url: https://github.com/your-username/claude-code-tutorials
 
 theme:
   name: material
-  language: zh-CN
+  language: zh
   palette:
     # 切换到深色模式
     - media: "(prefers-color-scheme: dark)"
