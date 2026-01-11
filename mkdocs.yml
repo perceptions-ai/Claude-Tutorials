@@ -1,10 +1,10 @@
 site_name: Claude Code 教程与经验分享
-site_url: https://your-site-name.pages.dev/
+site_url: https://claude-tutorials.pages.dev/
 site_description: 关于 Claude Code 的全方位使用教程、最佳实践和经验分享。
 site_author: Your Name
 
 repo_name: claude-code-tutorials
-repo_url: https://github.com/your-username/claude-code-tutorials
+repo_url: https://github.com/perceptions-ai/Claude-Tutorials
 
 theme:
   name: material
