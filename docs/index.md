@@ -12,25 +12,39 @@ Claude Code 是 Anthropic 推出的新一代 AI 编程助手，它不仅能理�
 
 我们精心整理了以下内容：
 
-<div class="grid cards" markdown>
+## 🚀 快速开始
 
--   :rocket: __快速开始__
+几分钟内开始使用 Claude Code：
 
-    从零开始[安装](getting-started/installation.md)和[配置](getting-started/configuration.md)您的 Claude Code 环境，掌握基础的[命令行操作](getting-started/commands.md)。
+### 安装步骤
 
--   :book: __最佳实践__
+1. [安装 Claude Code](getting-started/installation.md)
+2. [配置您的环境](getting-started/configuration.md)
+3. [掌握命令操作](getting-started/commands.md)
 
-    学习专家总结的[核心经验](practices/core-practices.md)和[提升效率的技巧](practices/tips.md)，避免常见陷阱。
+### 系统支持
 
--   :puzzle_piece: __高级教程__
+*   Windows 10/11 (推荐)
+*   macOS 10.14+
+*   Linux Ubuntu 18.04+
 
-    探索 [Subagents](advanced/subagents.md) 等高级功能，打造属于您的[终极工作流](advanced/workflow.md)。
+## 📚 最佳实践
 
--   :people_holding_hands: __社区资源__
+学习专家总结的核心经验：
 
-    加入[社区](community.md)，获取最新资讯、拼车服务信息及其他资源。
+*   [核心经验](practices/core-practices.md) - 避免常见陷阱
+*   [提升效率的技巧](practices/tips.md) - 实用技巧分享
 
-</div>
+## 🧩 高级教程
+
+探索 Claude Code 的进阶功能：
+
+*   [Subagents 详解](advanced/subagents.md)
+*   [打造终极工作流](advanced/workflow.md)
+
+## 🤝 社区资源
+
+*   [加入社区](community.md) - 获取最新资讯和拼车服务
 
 ## 💡 最新动态
 
