@@ -2,7 +2,6 @@
 
 这是一个基于 [MkDocs](https://www.mkdocs.org/) 和 [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) 构建的静态文档网站项目，用于分享 **Claude Code** 的使用教程及经验。
 
-项目结构参考了 [ctok.ai](https://ctok.ai/) 的内容组织。
 
 ## 📁 目录结构
 
